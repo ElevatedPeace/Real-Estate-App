@@ -1,7 +1,19 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
-  swcMinify: true,
+  images:{
+    domains:['bayut-production.s3.eu-central-1.amazonaws.com']
+},
+
+module: {
+  rules: [
+    {
+      test: /\.(js|jsx)$/,
+      execlude: /node-modules/,
+      use: {
+        loader: "babel-loader"
+      }
+    }
+  ]
+}
 }
 
-module.exports = nextConfig
